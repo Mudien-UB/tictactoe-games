@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'axiforma';
+    src: url('fon/Axiforma-Medium.ttf') format('truetype');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(2, 27, 26, 1);
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: rgb(3, 34, 33);
+    padding: 15px;
+    width: max-content;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+h1 {
+    color: rgb(3, 34, 33);
+    font-family: axiforma;
+    text-shadow: -1px -1px 0 rgba(122, 183, 60, 1), 0 0 5px rgba(122, 183, 60, 0.4);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-family: axiforma;
+    font-weight: 900;
+    background-color: #4e977a;
+    border-radius: 2px;
+    box-shadow: inset 0 0 5px rgb(3, 34, 33), inset 1px 1px 10px rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.cell:hover {
+    background-color: #eaeaea;
+    transform: scale(1.02);
+}
+
+.cell:active {
+    transform: scale(1.0);
+}
+
+button {
+    width: 100%;
+    padding: 10px 20px;
+    color: #234638;
+    font-weight: 800;
+    font-family: axiforma;
+    border: none;
+    font-size: 1em;
+    margin: 20px 0px 10px 0px;
+    background-color: #f7f4d1;
+    box-shadow: inset 0 0 5px rgb(3, 34, 33), inset 1px 1px 10px rgba(0, 0, 0, 0.5);
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(247, 244, 209, 0.9);
+    transform: scale(0.99);
+}
+
+button:active {
+    transform: scale(1.0);
+}
+
+.pesan {
+    color: #4e977a;
+    text-shadow: 0 0 5px rgba(78, 151, 122, 0.5);
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        width: max-content;
+        aspect-ratio: 3/4;
+        padding: 15px;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 3px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .pesan {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: max-content;
+        aspect-ratio: 3/4; /* Further adjust aspect ratio for very small screens */
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+        gap: 2px;
+    }
+
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+
+    .pesan {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
